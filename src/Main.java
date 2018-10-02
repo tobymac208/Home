@@ -11,7 +11,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Login/main.fxml"));
         // set the title of this window
-        primaryStage.setTitle("Home");
+        primaryStage.setTitle("Home v1.0");
         // load the file from our root object
         primaryStage.setScene(new Scene(root, 400, 400));
         // display the window

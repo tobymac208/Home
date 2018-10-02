@@ -1,11 +1,17 @@
 package Login;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Paint;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class mainWindowController {
     private static LoginAccount userAccount = new LoginAccount("coolman", "Mike Hanson", "password");
@@ -48,6 +54,17 @@ public class mainWindowController {
         if(usernameField.getText().toLowerCase().equals(userAccount.getUsername()) && passwordField.getText().toLowerCase().equals(userAccount.getPassword())){
             loginSuccess.setTextFill(Paint.valueOf("green"));
             loginSuccess.setText("Login successful.");
+
+            Parent root;
+            try{
+                root = FXMLLoader.load(getClass().getClassLoader().getResource("AccountInfo/AccountInfo.fxml"));
+                Stage stage = new Stage();
+                stage.setTitle(userAccount.getFirstName() + " " + userAccount.getLastName() +  "'s Account");
+                stage.setScene(new Scene(root, 400, 400));
+                stage.show();
+            }catch (IOException e){
+                System.out.println("Exception thrown! File doesn't exist.");
+            }
         }else {
             loginSuccess.setTextFill(Paint.valueOf("red"));
             loginSuccess.setText("Login failed.");

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="AccountInfo.AccountInfoController"
+            prefHeight="400.0" prefWidth="600.0" alignment="CENTER">
+    <VBox GridPane.rowIndex="0">
+        <HBox>
+            <Button fx:id="viewInformationButton" text="View Account Info" onMouseClicked="#viewAccountInfo" />
+            <Button fx:id="viewRandomButton" text="View Random Crap" onMouseClicked="#viewRandom" />
+        </HBox>
+        <TextArea fx:id="textArea" editable="false" />
+    </VBox>
+
+</GridPane>
