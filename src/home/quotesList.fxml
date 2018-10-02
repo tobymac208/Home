@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="home.quotesController"
+            prefHeight="400.0" prefWidth="600.0">
+    <top>
+        <VBox>
+            <TextField promptText="Quote name" fx:id="quoteName" onKeyReleased="#onKeyReleased_QuoteCreator" />
+            <TextField promptText="Quote description" fx:id="quoteDescription" onKeyReleased="#onKeyReleased_QuoteCreator" />
+            <HBox>
+                <Button text="Create quote" fx:id="quoteButton" onAction="#createQuote" />
+                <Button text="Delete all files" onAction="#deleteQuotesFile" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <left>
+        <ListView fx:id="quotesListView">
+        </ListView>
+    </left>
+
+    <center>
+        <VBox>
+            <TextArea fx:id="description" VBox.vgrow="ALWAYS" editable="false"  />
+            <HBox style="-fx-background-color: FFFFFF">
+                <Label text="Created:">
+                    <font>
+                        <Font name="Times New Roman bold" size="20" />
+                    </font>
+                </Label>
+                <Label fx:id="dateCreated">
+                    <font>
+                        <Font name="Times New Roman bold" size="20" />
+                    </font>
+                </Label>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

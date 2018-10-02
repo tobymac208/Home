@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="Login.mainWindowController"
+          prefHeight="400.0" prefWidth="600.0" alignment="CENTER" hgap="10">
+
+    <VBox GridPane.rowIndex="0">
+        <TextField fx:id="usernameField" promptText="Username" onKeyReleased="#handleKeyRelease_Login" />
+        <PasswordField fx:id="passwordField" promptText="Password" onKeyReleased="#handleKeyRelease_Login" />
+        <Button fx:id="loginButton" text="Login" onMouseClicked="#login"  /> <!-- This button is for logging the user in -->
+        <Label fx:id="loginSuccess" textFill="crimson"/>
+        <!-- Show the password hint -->
+        <Button text="Forgot Password" onMouseClicked="#passwordHint" />
+        <!-- Label for the password hint to be displayed in -->
+        <Label fx:id="hint" textFill="blue"/>
+    </VBox>
+
+</GridPane>
