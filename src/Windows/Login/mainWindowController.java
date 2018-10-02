@@ -1,6 +1,5 @@
-package Login;
+package Windows.Login;
 
-import home.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Paint;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -55,11 +53,11 @@ public class mainWindowController {
     public void login(){
         if(usernameField.getText().toLowerCase().equals(userAccount.getUsername()) && passwordField.getText().toLowerCase().equals(userAccount.getPassword())){
             loginSuccess.setTextFill(Paint.valueOf("green"));
-            loginSuccess.setText("Login successful.");
+            loginSuccess.setText("Windows.Login successful.");
 
             Parent root;
             try{
-                root = FXMLLoader.load(getClass().getClassLoader().getResource("AccountInfo/AccountInfo.fxml"));
+                root = FXMLLoader.load(getClass().getClassLoader().getResource("Windows/AccountInfo/AccountInfo.fxml"));
                 Stage stage = new Stage();
                 stage.setTitle(userAccount.getFirstName() + " " + userAccount.getLastName() +  "'s Account");
                 stage.setScene(new Scene(root, 400, 400));
@@ -69,7 +67,7 @@ public class mainWindowController {
             }
         }else {
             loginSuccess.setTextFill(Paint.valueOf("red"));
-            loginSuccess.setText("Login failed.");
+            loginSuccess.setText("Windows.Login failed.");
         }
     }
 }

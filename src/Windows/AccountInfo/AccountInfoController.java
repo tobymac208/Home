@@ -1,8 +1,7 @@
-package AccountInfo;
+package Windows.AccountInfo;
 
-import Login.LoginAccount;
+import Windows.Login.LoginAccount;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 public class AccountInfoController {

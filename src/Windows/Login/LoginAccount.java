@@ -1,4 +1,4 @@
-package Login;
+package Windows.Login;
 
 public class LoginAccount {
     private String username;

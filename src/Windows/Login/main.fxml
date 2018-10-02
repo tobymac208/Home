@@ -9,13 +9,13 @@
 <?import javafx.collections.FXCollections?>
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
-          fx:controller="Login.mainWindowController"
+          fx:controller="Windows.Login.mainWindowController"
           prefHeight="400.0" prefWidth="600.0" alignment="CENTER" hgap="10">
 
     <VBox GridPane.rowIndex="0">
         <TextField fx:id="usernameField" promptText="Username" onKeyReleased="#handleKeyRelease_Login" />
         <PasswordField fx:id="passwordField" promptText="Password" onKeyReleased="#handleKeyRelease_Login" />
-        <Button fx:id="loginButton" text="Login" onMouseClicked="#login"  /> <!-- This button is for logging the user in -->
+        <Button fx:id="loginButton" text="Windows.Login" onMouseClicked="#login"  /> <!-- This button is for logging the user in -->
         <Label fx:id="loginSuccess" textFill="crimson"/>
         <!-- Show the password hint -->
         <Button text="Forgot Password" onMouseClicked="#passwordHint" />

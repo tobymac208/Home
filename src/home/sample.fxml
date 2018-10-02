@@ -13,7 +13,7 @@
             xmlns:fx="http://javafx.com/fxml">
 
     <top>
-        <Label text="Login | Register" wrapText="true" BorderPane.alignment="CENTER" >
+        <Label text="Windows.Login | Register" wrapText="true" BorderPane.alignment="CENTER" >
             <font>
                 <Font name="Arial" size="25" />
             </font>
@@ -32,7 +32,7 @@
 
             <TextField promptText="username" fx:id="username" onKeyReleased="#keyReleased_Login" />
             <PasswordField promptText="password" fx:id="password" onKeyReleased="#keyReleased_Login" />
-            <Button text="Login" fx:id="login" onAction="#login" />
+            <Button text="Windows.Login" fx:id="login" onAction="#login" />
 
 
             <Label text="Delete all accounts?" />
@@ -43,7 +43,7 @@
     <left>
         <GridPane BorderPane.alignment="TOP_CENTER">
             <VBox GridPane.rowIndex="0">
-                <Label text="Login Status:" />
+                <Label text="Windows.Login Status:" />
                 <Label fx:id="currentAccount"/>
             </VBox>
             <VBox GridPane.rowIndex="1">

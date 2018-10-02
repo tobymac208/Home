@@ -10,14 +10,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Login/main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Windows/Login/main.fxml"));
         // set the title of this window
         primaryStage.setTitle("Home v1.0");
         // load the file from our root object
         primaryStage.setScene(new Scene(root, 400, 400));
         // display the window
         primaryStage.show();
-        // hello
     }
 
     public static void main(String[] args){

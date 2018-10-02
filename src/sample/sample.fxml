@@ -40,7 +40,7 @@
     <HBox GridPane.rowIndex="2">
         <TextField promptText="Enter your username" fx:id="username_entry" onKeyReleased="#handleKeyReleased_Login" />
         <PasswordField promptText="Enter your password" fx:id="password_entry" onKeyReleased="#handleKeyReleased_Login" />
-        <Button fx:id="login_button" text="Login" />
+        <Button fx:id="login_button" text="Windows.Login" />
     </HBox>
 
     <VBox GridPane.rowIndex="3">
