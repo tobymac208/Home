@@ -5,7 +5,7 @@
     Updates
  */
 //
-//package sample;
+//package Windows.sample;
 //
 //import javafx.application.Application;
 //import javafx.fxml.FXMLLoader;
@@ -17,7 +17,7 @@
 //
 //    @Override
 //    public void start(Stage primaryStage) throws Exception{
-//        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml")); // sets the UI elements for the stage
+//        Parent root = FXMLLoader.load(getClass().getResource("Windows.sample.fxml")); // sets the UI elements for the stage
 //        primaryStage.setTitle("Home"); // sets the title of the stage (title of the window)
 //        primaryStage.setScene(new Scene(root, 400, 400)); // sets the window size
 //        primaryStage.show(); // displays the window

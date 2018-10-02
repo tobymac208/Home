@@ -1,11 +1,6 @@
-package sample;
+package Windows.sample;
 
 import javafx.fxml.FXML;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;

@@ -1,4 +1,4 @@
-package home;
+package Windows.home;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

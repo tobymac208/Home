@@ -1,4 +1,4 @@
-package home;
+package Windows.home;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -6,7 +6,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Paint;
-import sun.util.resources.LocaleData;
 
 import java.io.*;
 import java.text.SimpleDateFormat;

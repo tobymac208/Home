@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.VBox?>
-<BorderPane fx:controller="home.Controller"
+<BorderPane fx:controller="Windows.home.Controller"
             xmlns:fx="http://javafx.com/fxml">
 
     <top>

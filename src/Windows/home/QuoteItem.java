@@ -1,8 +1,6 @@
-package home;
+package Windows.home;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * Created by Nik on 6/23/2017.
