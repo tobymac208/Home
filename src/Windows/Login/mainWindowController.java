@@ -53,7 +53,7 @@ public class mainWindowController {
     public void login(){
         if(usernameField.getText().toLowerCase().equals(userAccount.getUsername()) && passwordField.getText().toLowerCase().equals(userAccount.getPassword())){
             loginSuccess.setTextFill(Paint.valueOf("green"));
-            loginSuccess.setText("Windows.Login successful.");
+            loginSuccess.setText("Login successful.");
 
             Parent root;
             try{
@@ -67,7 +67,7 @@ public class mainWindowController {
             }
         }else {
             loginSuccess.setTextFill(Paint.valueOf("red"));
-            loginSuccess.setText("Windows.Login failed.");
+            loginSuccess.setText("Login failed.");
         }
     }
 }
