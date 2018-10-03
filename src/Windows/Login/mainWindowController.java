@@ -55,6 +55,10 @@ public class mainWindowController {
             loginSuccess.setTextFill(Paint.valueOf("green"));
             loginSuccess.setText("Login successful.");
 
+            // Clear the fields
+            usernameField.setText("");
+            passwordField.setText("");
+
             Parent root;
             try{
                 root = FXMLLoader.load(getClass().getClassLoader().getResource("Windows/AccountInfo/AccountInfo.fxml"));
