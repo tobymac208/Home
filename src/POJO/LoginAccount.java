@@ -1,4 +1,4 @@
-package Windows.Login;
+package POJO;
 
 public class LoginAccount {
     private String username;

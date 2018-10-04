@@ -1,6 +1,5 @@
 package Windows.AccountInfo;
 
-import Windows.Login.LoginAccount;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 

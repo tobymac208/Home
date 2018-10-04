@@ -1,5 +1,6 @@
 package Windows.Login;
 
+import POJO.LoginAccount;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,7 +17,6 @@ import java.io.IOException;
 public class mainWindowController {
     private static LoginAccount userAccount = new LoginAccount("coolman", "Mike Hanson", "password");
     private static String passwordHint = "It's literally \"" + userAccount.getPassword() + "\"";
-
     @FXML
     private TextField usernameField;
     @FXML
