@@ -1,11 +1,14 @@
 package Windows.AccountInfo;
 
 import POJO.LoginAccount;
+import POJO.TaskList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 
 public class AccountInfoController {
     private static LoginAccount userAccount = new LoginAccount("coolman", "Mike Hanson", "password");
+    private static TaskList tasks = new TaskList();
+
     @FXML
     private TextArea textArea;
 
