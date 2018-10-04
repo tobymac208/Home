@@ -66,7 +66,7 @@ public class mainWindowController {
                 root = FXMLLoader.load(getClass().getClassLoader().getResource("Windows/AccountInfo/AccountInfo.fxml"));
                 Stage stage = new Stage();
                 stage.setTitle(userAccount.getFirstName() + " " + userAccount.getLastName() +  "'s Account");
-                stage.setScene(new Scene(root, 400, 400));
+                stage.setScene(new Scene(root, 800, 800));
                 stage.show();
             }catch (IOException e){
                 System.out.println("Exception thrown! File doesn't exist.");
