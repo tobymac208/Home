@@ -1,9 +1,12 @@
 package Windows.AccountInfo;
 
 import POJO.LoginAccount;
+import POJO.Task;
 import POJO.TaskList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
+
+import java.util.GregorianCalendar;
 
 public class AccountInfoController {
     private static LoginAccount userAccount = new LoginAccount("coolman", "Mike Hanson", "password");
@@ -11,6 +14,18 @@ public class AccountInfoController {
 
     @FXML
     private TextArea textArea;
+
+    // Initialize values
+    public void initialize(){
+        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 3));
+        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 4));
+        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 6));
+        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 7));
+        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 8));
+        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 9));
+        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 10));
+        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 11));
+    }
 
     /** Writes account info the the text area */
     public void viewAccountInfo(){
@@ -29,5 +44,21 @@ public class AccountInfoController {
         }
 
         textArea.setText(writeString);
+    }
+
+    /** Writes out the tasks */
+    public void viewTasks(){
+        String writeToString = "";
+        if(tasks.getTaskList().get(0) == null)
+            textArea.setText("Nothing to display.");
+        int count = 0;
+        // iterate through every task
+        for(Task task : tasks.getTaskList()){
+            count++;
+            writeToString += count + "\n\tName: " + task.getName() + "\n\tDescription: " + task.getDescription()
+                    + "\n\tDate created: " + task.getMonthDayYear() + "\n";
+        }
+
+        textArea.setText(writeToString);
     }
 }

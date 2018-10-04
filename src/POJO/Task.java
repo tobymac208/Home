@@ -23,6 +23,8 @@ public class Task {
     // calendar
     public GregorianCalendar getDateCreated() {return dateCreated;}
     public void setDateCreated(GregorianCalendar dateCreated) {this.dateCreated = dateCreated;}
+    public String getMonthDayYear(){return dateCreated.get(GregorianCalendar.MONTH) + "/" + dateCreated.get(GregorianCalendar.DAY_OF_MONTH) + "/"
+            + dateCreated.get(GregorianCalendar.YEAR);}
     // ------------- End of getters and setters -------------
 
     /** Return a string representation of this object */
