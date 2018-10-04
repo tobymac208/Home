@@ -58,6 +58,8 @@ public class mainWindowController {
             // Clear the fields
             usernameField.setText("");
             passwordField.setText("");
+            // disable the button
+            loginButton.setDisable(true);
 
             Parent root;
             try{
