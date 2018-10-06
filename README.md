@@ -1,2 +1,2 @@
 # Home
-Home project
+This program allows a user to do various operations, like managing your schedule.
