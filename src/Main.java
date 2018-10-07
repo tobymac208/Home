@@ -22,7 +22,6 @@ public class Main extends Application {
         // display the window
         primaryStage.show();
     }
-
     public static void main(String[] args){
         launch(args);
     }
