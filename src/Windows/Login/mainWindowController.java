@@ -1,6 +1,7 @@
 package Windows.Login;
 
 import POJO.LoginAccount;
+import POJO.LoginAccountCollection;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,43 +16,54 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class mainWindowController {
-    private static LoginAccount userAccount = new LoginAccount("coolman", "Mike Hanson", "password");
-    private static String passwordHint = "It's literally \"" + userAccount.getPassword() + "\"";
-    @FXML
-    private TextField usernameField;
-    @FXML
-    private PasswordField passwordField;
-    @FXML
-    private Button loginButton;
-    @FXML
-    private Label loginSuccess;
-    @FXML
-    private Label hint;
+    private static LoginAccountCollection users = new LoginAccountCollection();
+    private static LoginAccount userLoggedIn;
+
+    @FXML private TextField usernameField;
+    @FXML private PasswordField passwordField;
+    @FXML private Button loginButton;
+    @FXML private Label loginSuccess;
+    @FXML private Label hint;
+    @FXML private Button registerButton;
+    @FXML private TextField register_username;
+    @FXML private TextField register_firstName;
+    @FXML private TextField register_lastName;
+    @FXML private TextField register_password;
+    @FXML private TextField register_re_entry_password;
 
     public void initialize(){
-        // disable the login button by default
+        // disable the login and register button by default
         loginButton.setDisable(true);
+        registerButton.setDisable(true);
+
+        LoginAccount userAccount_1 = new LoginAccount("coolman", "Mike Hanson", "password");
+        LoginAccount userAccount_2 = new LoginAccount("geniadude", "Mike Hanson", "password");
+        users.add(userAccount_1);
+        users.add(userAccount_2);
     }
 
+    // LOGIN methods
+    /** Login button functionality */
     public void handleKeyRelease_Login(){
         String username = usernameField.getText(), password = passwordField.getText();
         final int MIN_LENGTH = 5;
-        boolean isDisabled = (username.trim().isEmpty() || username.isEmpty() || username.trim().length() < MIN_LENGTH) ||
-                (password.trim().isEmpty() || password.isEmpty() || password.trim().length() < MIN_LENGTH); // if any of the fields are empty, or their trim is empty, set the boolean value to true
+        boolean isDisabled = (username.trim().isEmpty() || username.trim().length() < MIN_LENGTH) ||
+                (password.trim().isEmpty() || password.trim().length() < MIN_LENGTH); // if any of the fields are empty, or their trim is empty, set the boolean value to true
         loginButton.setDisable(isDisabled);
     }
-
     public void passwordHint(){
+        // TODO: Implement password hint
         if(hint.getText().isEmpty()) {
-            hint.setText("Hint: " + passwordHint);
+            hint.setText("Hint: Unimplemented");
         }else{
             hint.setText("");
         }
     }
-
     /** Allows a user to login */
     public void login(){
-        if(usernameField.getText().toLowerCase().equals(userAccount.getUsername()) && passwordField.getText().toLowerCase().equals(userAccount.getPassword())){
+
+
+        if(usernameField.getText().toLowerCase().equals(userLoggedIn.getUsername()) && passwordField.getText().toLowerCase().equals(userLoggedIn.getPassword())){
             loginSuccess.setTextFill(Paint.valueOf("green"));
             loginSuccess.setText("Login successful.");
 
@@ -65,7 +77,7 @@ public class mainWindowController {
             try{
                 root = FXMLLoader.load(getClass().getClassLoader().getResource("Windows/AccountInfo/AccountInfo.fxml"));
                 Stage stage = new Stage();
-                stage.setTitle(userAccount.getFirstName() + " " + userAccount.getLastName() +  "'s Account");
+                stage.setTitle(userLoggedIn.getFirstName() + " " + userLoggedIn.getLastName() +  "'s Account");
                 stage.setScene(new Scene(root, 800, 800));
                 stage.show();
             }catch (IOException e){
@@ -75,5 +87,22 @@ public class mainWindowController {
             loginSuccess.setTextFill(Paint.valueOf("red"));
             loginSuccess.setText("Login failed.");
         }
+    }
+
+    // REGISTER methods
+    /** Register button functionality */
+    public void handleKeyRelease_Register(){
+        String username = register_username.getText(), firstName = register_firstName.getText(),
+                lastName = register_lastName.getText(), password = register_password.getText(),
+                re_enter_password = register_re_entry_password.getText();
+        final int MIN_LENGTH = 5;
+        // check all of the values. Passwords must be equal, and names must not be empty
+        boolean isDisabled = (username.trim().isEmpty() || username.isEmpty() || username.trim().length() < MIN_LENGTH)
+                || (password.trim().isEmpty() || password.trim().length() < MIN_LENGTH) || (re_enter_password.trim().isEmpty()
+                || re_enter_password.trim().length() < MIN_LENGTH) || !(password.equals(re_enter_password)
+                || (firstName.trim().isEmpty()) || (lastName.trim().isEmpty()));
+    }
+    public void register(){
+        // TODO: Implement
     }
 }
