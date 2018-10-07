@@ -24,12 +24,14 @@ public class mainWindowController {
     @FXML private Button loginButton;
     @FXML private Label loginSuccess;
     @FXML private Label hint;
+
     @FXML private Button registerButton;
     @FXML private TextField register_username;
     @FXML private TextField register_firstName;
     @FXML private TextField register_lastName;
-    @FXML private TextField register_password;
-    @FXML private TextField register_re_entry_password;
+    @FXML private PasswordField register_password;
+    @FXML private PasswordField register_re_entry_password;
+    @FXML private Label registerSuccess;
 
     public void initialize(){
         // disable the login and register button by default
@@ -52,39 +54,48 @@ public class mainWindowController {
         loginButton.setDisable(isDisabled);
     }
     public void passwordHint(){
-        // TODO: Implement password hint
-        if(hint.getText().isEmpty()) {
-            hint.setText("Hint: Unimplemented");
+        if(userLoggedIn == null){
+            hint.setText("No user selected.");
         }else{
-            hint.setText("");
+            if(hint.getText().isEmpty()) {
+                hint.setText("Hint: " + userLoggedIn.getPassword());
+            }else{
+                hint.setText("");
+            }
         }
     }
     /** Allows a user to login */
     public void login(){
+        LoginAccount accountToSearch = new LoginAccount(usernameField.getText(), null, passwordField.getText());
+        LoginAccount foundAccount = users.findAccount(accountToSearch);
+        if(foundAccount != null){
+            userLoggedIn = foundAccount;
 
+            if(usernameField.getText().toLowerCase().equals(userLoggedIn.getUsername()) && passwordField.getText().toLowerCase().equals(userLoggedIn.getPassword())){
+                loginSuccess.setTextFill(Paint.valueOf("green"));
+                loginSuccess.setText("Login successful.");
 
-        if(usernameField.getText().toLowerCase().equals(userLoggedIn.getUsername()) && passwordField.getText().toLowerCase().equals(userLoggedIn.getPassword())){
-            loginSuccess.setTextFill(Paint.valueOf("green"));
-            loginSuccess.setText("Login successful.");
+                // Clear the fields
+                usernameField.setText("");
+                passwordField.setText("");
+                // disable the button
+                loginButton.setDisable(true);
 
-            // Clear the fields
-            usernameField.setText("");
-            passwordField.setText("");
-            // disable the button
-            loginButton.setDisable(true);
-
-            Parent root;
-            try{
-                root = FXMLLoader.load(getClass().getClassLoader().getResource("Windows/AccountInfo/AccountInfo.fxml"));
-                Stage stage = new Stage();
-                stage.setTitle(userLoggedIn.getFirstName() + " " + userLoggedIn.getLastName() +  "'s Account");
-                stage.setScene(new Scene(root, 800, 800));
-                stage.show();
-            }catch (IOException e){
-                System.out.println("Exception thrown! File doesn't exist.");
+                Parent root;
+                try{
+                    root = FXMLLoader.load(getClass().getClassLoader().getResource("Windows/AccountInfo/AccountInfo.fxml"));
+                    Stage stage = new Stage();
+                    stage.setTitle(userLoggedIn.getFirstName() + " " + userLoggedIn.getLastName() +  "'s Account");
+                    stage.setScene(new Scene(root, 800, 800));
+                    stage.show();
+                }catch (IOException e){
+                    System.out.println("Exception thrown! File doesn't exist.");
+                }
+            }else {
+                loginSuccess.setTextFill(Paint.valueOf("red"));
+                loginSuccess.setText("Login failed.");
             }
-        }else {
-            loginSuccess.setTextFill(Paint.valueOf("red"));
+        }else{
             loginSuccess.setText("Login failed.");
         }
     }

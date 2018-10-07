@@ -28,9 +28,10 @@
         <TextField fx:id="register_username" promptText="Username" />
         <TextField fx:id="register_firstName" promptText="First Name" />
         <TextField fx:id="register_lastName" promptText="Last Name" />
-        <TextField fx:id="register_password" promptText="Password" />
-        <TextField fx:id="register_re_entry_password" promptText="Re-enter password" />
+        <PasswordField fx:id="register_password" promptText="Password" />
+        <PasswordField fx:id="register_re_entry_password" promptText="Re-enter password" />
         <Button fx:id="registerButton" text="Submit" onMouseClicked="#register" onKeyReleased="#handleKeyRelease_Register"/>
+        <Label fx:id="registerSuccess" textFill="blue"/>
     </VBox>
 
 </GridPane>

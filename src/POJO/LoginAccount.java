@@ -7,10 +7,16 @@ public class LoginAccount {
     private String password;
 
     public LoginAccount(String username, String name, String password){
-        String[] names = name.split(" ");
+        if(name == null){
+            this.firstName = null;
+            this.lastName = null;
+        }else{
+            String[] names = name.split(" ");
+            this.firstName = names[0];
+            this.lastName = names[1];
+        }
         this.username = username;
-        this.firstName = names[0];
-        this.lastName = names[1];
+
         this.password = password;
     }
 
