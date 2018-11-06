@@ -10,10 +10,19 @@ public class TaskList {
         taskList = new ArrayList<>();
     }
 
-    public ArrayList<Task> getTaskList(){return taskList;}
+    public ArrayList<Task> getTaskList(){
+        return taskList;
+    }
 
-    public boolean add(String name, String description, GregorianCalendar calendar){
+    public boolean add(String name, String description){
+        for(Task task : taskList){ // check to make sure there aren't any copies.
+            if(name.equals(task.getName()) && description.equals(task.getDescription())){
+                return false;
+            }
+        }
+
         // return the result of adding the object to the list
-        return taskList.add(new Task(name, description, calendar));
+        taskList.add(new Task(name, description));
+        return true;
     }
 }

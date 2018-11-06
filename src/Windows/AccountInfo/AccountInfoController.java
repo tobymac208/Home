@@ -21,14 +21,14 @@ public class AccountInfoController {
 
     // Initialize values
     public void initialize(){
-        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 3));
-        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 4));
-        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 6));
-        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 7));
-        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 8));
-        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 9));
-        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 10));
-        tasks.add("Get homework done", "Finish up homework", new GregorianCalendar(2018, 10, 11));
+        tasks.add("Get homework done", "Finish up homework");
+        tasks.add("Get homework done", "Finish up homework");
+        tasks.add("Get homework done", "Finish up homework");
+        tasks.add("Get homework done", "Finish up homework");
+        tasks.add("Get homework done", "Finish up homework");
+        tasks.add("Get homework done", "Finish up homework");
+        tasks.add("Get homework done", "Finish up homework");
+        tasks.add("Get homework done", "Finish up homework");
     }
 
     /** Writes account info the the text area */
@@ -59,8 +59,7 @@ public class AccountInfoController {
         // iterate through every task
         for(Task task : tasks.getTaskList()){
             count++;
-            writeToString += count + "\n\tName: " + task.getName() + "\n\tDescription: " + task.getDescription()
-                    + "\n\tDate created: " + task.getMonthDayYear() + "\n";
+            writeToString += count + "\n\tName: " + task.getName() + "\n\tDescription: " + task.getDescription() + "\n";
         }
 
         textArea.setText(writeToString);
@@ -68,6 +67,6 @@ public class AccountInfoController {
 
     /** Adds a new item to the list of things to-do */
     public void addNewTodoItem(){
-
+        tasks.add(nameOfTask, descriptionOfTask);
     }
 }
