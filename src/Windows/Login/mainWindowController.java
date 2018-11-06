@@ -66,12 +66,12 @@ public class mainWindowController {
     }
     /** Allows a user to login */
     public void login(){
-        LoginAccount accountToSearch = new LoginAccount(usernameField.getText(), null, passwordField.getText());
-        LoginAccount foundAccount = users.findAccount(accountToSearch);
+        LoginAccount accountToSearchFor = new LoginAccount(usernameField.getText(), null, passwordField.getText());
+        LoginAccount foundAccount = users.findAccount(accountToSearchFor);
         if(foundAccount != null){
             userLoggedIn = foundAccount;
 
-            if(usernameField.getText().toLowerCase().equals(userLoggedIn.getUsername()) && passwordField.getText().toLowerCase().equals(userLoggedIn.getPassword())){
+            if(usernameField.getText().toLowerCase().equals(userLoggedIn.getUsername().toLowerCase()) && passwordField.getText().toLowerCase().equals(userLoggedIn.getPassword().toLowerCase())){
                 loginSuccess.setTextFill(Paint.valueOf("green"));
                 loginSuccess.setText("Login successful.");
 

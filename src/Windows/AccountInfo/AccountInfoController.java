@@ -14,6 +14,10 @@ public class AccountInfoController {
 
     @FXML
     private TextArea textArea;
+    @FXML
+    private String descriptionOfTask;
+    @FXML
+    private String nameOfTask;
 
     // Initialize values
     public void initialize(){
@@ -60,5 +64,10 @@ public class AccountInfoController {
         }
 
         textArea.setText(writeToString);
+    }
+
+    /** Adds a new item to the list of things to-do */
+    public void addNewTodoItem(){
+
     }
 }

@@ -12,16 +12,16 @@ public class LoginAccountCollection {
     /** Add a new LoginAccount object to the collection.
      * There can only be one type of username. No copies. */
     public boolean add(LoginAccount accountToAdd){
-        // did it work?
-        boolean answer = true;
 
-        for(LoginAccount account : loginAccounts){
+        for(LoginAccount account : loginAccounts){ // check if any accounts have matching usernames
             // is there a copy of the username?
             if(account.getUsername().toLowerCase().equals(accountToAdd.getUsername().toLowerCase())){
-                answer = false;
+                return false;
             }
         }
-        return answer;
+
+        loginAccounts.add(accountToAdd); // add the account
+        return true;
     }
 
     /** Remove a LoginAccount */
